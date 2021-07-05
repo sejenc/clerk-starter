@@ -1,3 +1,22 @@
+# Local development instructions
+
+Before running the application please create a .env file. That file should have one variable with name REACT_APP_CLERK_API_KEY. The value of that variable should be your API key for accessing the Clerk API.
+
+To run the app locally:
+- run ```npm install```
+- then run ```npm run start```
+
+Note: There is an issue that affects the sort functionality. A user has to click the sort option twice in order for the dom to update.
+
+Current Features:
+- user can select next/prev buttons to see different sets of members
+- user can sort by name/state in asc/desc order
+
+TODO: 
+- disable prev button when user is on the first page. Similarly, disable next button when user in on the last page. 
+- render class on sort option which allows users to see which option is currently active.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
