@@ -1,8 +1,11 @@
-import React from 'react'
-export default function Member(props) {
+import './Member.css'
+
+function Member(props) {
+    const { member } = props
     return (
         <div>
-            <span>{props.name}</span>
+            <p>{member.displayName} - {member.stateCode}</p>
         </div>
     ) 
 }
+export default Member

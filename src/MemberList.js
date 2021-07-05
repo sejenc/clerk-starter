@@ -1,20 +1,13 @@
-import React, {useEffect, useState } from 'react'
+import './MemberList.css'
+
 import Member from "./Member"
 
-async function getMembers () {
-    const response = await fetch(`https://clerkapi.azure-api.net/Members/v1/?key=${process.env.REACT_APP_CLERK_API_KEY}`)
-    return response.json()
-}
-
-export default function MemberList () {
-    const [data, setData] = useState([])
-    useEffect(() => {
-        getMembers().then(memberData => setData(memberData.results))
-    }, [])
+function MemberList (props) {
 
     return (
-        <div>
-            { data.map(m => <Member key={m._id} name={m.officialName}/>) }
-        </div>
+        <ul className="member-list">
+            { props.data.map((member, i) => <li className='member' key={member.id}><Member member={member} /></li>) }
+        </ul>
     )
 }
+export default MemberList
